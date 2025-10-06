@@ -1,3 +1,42 @@
-<div class="container">
-  <h1>{{ title }}</h1>
+<div class="app-shell">
+  <!-- Sidebar -->
+  <aside class="sidebar surface">
+    <div class="gradient-panel rounded shadow" style="padding:1rem;">
+      <div style="display:flex; align-items:center; gap:.6rem;">
+        <div style="width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,#dbeafe,#ffffff);color:var(--color-primary);font-weight:800;">ON</div>
+        <div>
+          <div style="font-weight:800; color:#0f172a;">Ocean Notes</div>
+          <div class="text-muted" style="font-size:.8rem;">Professional simplicity</div>
+        </div>
+      </div>
+    </div>
+
+    <nav style="margin-top:1rem; display:grid; gap:.5rem;">
+      <a routerLink="/" routerLinkActive="active"
+         class="surface rounded shadow-sm"
+         style="padding:.7rem .9rem; border:1px solid #e5e7eb; display:flex; align-items:center; gap:.5rem;">
+        <span style="width:8px;height:8px;border-radius:9999px;background:var(--color-primary);"></span>
+        <span>All Notes</span>
+      </a>
+      <a routerLink="/archived"
+         class="surface rounded shadow-sm"
+         style="padding:.7rem .9rem; border:1px solid #e5e7eb; color:#6b7280;">
+        Archived
+      </a>
+      <a routerLink="/settings"
+         class="surface rounded shadow-sm"
+         style="padding:.7rem .9rem; border:1px solid #e5e7eb; color:#6b7280;">
+        Settings
+      </a>
+    </nav>
+
+    <footer style="margin-top:auto; padding:1rem; color:#6b7280; font-size:.85rem;">
+      <div>© {{ year }} Ocean Notes</div>
+    </footer>
+  </aside>
+
+  <!-- Main -->
+  <main style="padding:1.25rem; display:grid; gap:1rem;">
+    <router-outlet></router-outlet>
+  </main>
 </div>
